@@ -75,14 +75,6 @@ Alice was beginning to get very tired of sitting by her sister on the bank, and 
 So she was considering in her own mind (as well as she could, for the hot day made her feel very sleepy and stupid), whether the pleasure of making a daisy-chain would be worth the trouble of getting up and picking the daisies, when suddenly a White Rabbit with pink eyes ran close by her.
 ```
 
-## Contributing
-
-Contributions to improve the project are welcome. Please feel free to submit issues or pull requests.
-
-## License
-
-[Specify your chosen license here]
-
 ## Acknowledgments
 
 - This project demonstrates the effective integration of Go and Python in a text generation application.
