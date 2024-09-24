@@ -11,7 +11,8 @@ This project is a Markov chain-based text generator that combines the efficiency
 
 ## Requirements
 
-- Python 3.6+
+- Docker Engine
+- Python 3.7+
 - Go 1.15+
 - Streamlit
 - ctypes (included in Python standard library)
@@ -19,26 +20,24 @@ This project is a Markov chain-based text generator that combines the efficiency
 ## Installation
 
 1. Clone the repository:
+
    ```bash
-   git clone https://github.com/yourusername/markov-chain-text-generator.git
-   cd markov-chain-text-generator
+   git clone https://github.com/kelbudiul/mctg.git
+   cd mctg
    ```
 
-2. Install the required Python package:
-   ```bash
-   pip install streamlit
-   ```
+2. Build the Docker image:
 
-3. Compile the Go code into a shared library:
    ```bash
-   go build -o markov.dll -buildmode=c-shared markov.go
+   docker build -t mctg .
    ```
 
 ## Usage
 
-1. Start the Streamlit app:
+1. Run the Docker container:
+
    ```bash
-   streamlit run app.py
+   docker run --name mctg-client -p 8501:8501 mctg
    ```
 
 2. Open your web browser and navigate to `http://localhost:8501`.
@@ -55,7 +54,6 @@ This project is a Markov chain-based text generator that combines the efficiency
 - `markov.h`: C header file for the Go shared library.
 - `markov_chain.py`: Python wrapper for interacting with the Go library.
 - `app.py`: Streamlit application providing the user interface.
-- `README.md`: This file, containing project documentation.
 
 ## How It Works
 
@@ -69,10 +67,26 @@ This project is a Markov chain-based text generator that combines the efficiency
 
 You can use the following sample text to test the generator:
 
-```
-Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice she had peeped into the book her sister was reading, but it had no pictures or conversations in it, "and what is the use of a book," thought Alice, "without pictures or conversation?"
+```text
+Once upon a time, in the heart of a vast kingdom, there lived a wise old king who ruled over the land with fairness and kindness. The people adored their king, for under his reign, peace and prosperity had blossomed. Every morning, the sun would rise over the hills, casting a golden hue upon the villages and farms, and the fields would burst forth with crops.
 
-So she was considering in her own mind (as well as she could, for the hot day made her feel very sleepy and stupid), whether the pleasure of making a daisy-chain would be worth the trouble of getting up and picking the daisies, when suddenly a White Rabbit with pink eyes ran close by her.
+But as the days went by, a dark shadow began to creep over the land. Whispers of unrest stirred in the farthest reaches of the kingdom, where the wind carried tales of a mysterious figure lurking in the forests. Some said it was a sorcerer, banished long ago for practicing dark arts. Others believed it to be nothing more than a myth, a story spun by fearful minds. Nevertheless, the rumors spread, and with them, unease grew.
+
+The king, knowing that his people needed reassurance, called upon his most trusted knights to investigate. Among them was Sir Reginald, a brave and noble warrior who had fought many battles in service of the crown. With his sword at his side and a determined heart, Sir Reginald ventured into the forest, where the air grew thick with silence and the trees seemed to whisper secrets of their own.
+
+As he ventured deeper, the path became less clear, twisting and turning as though the forest itself were alive. Sir Reginald paused to catch his breath, only to hear a faint sound, like the rustling of leaves. He turned, his hand resting on the hilt of his sword, and saw a figure emerge from the shadows. It was a woman, cloaked in black, her eyes glimmering with an unnatural light.
+
+"You seek the truth," she said in a voice that seemed to echo through the trees. "But the truth is not always what it seems. What you find here may change the fate of the kingdom forever."
+
+Sir Reginald, though wary, stepped forward. "Who are you? And what do you know of the darkness that plagues our land?"
+
+The woman smiled, a slow and knowing smile. "I am but a messenger. The answers you seek lie beyond, in the heart of the forest. But beware, for the choices you make here will have consequences."
+
+With that, she vanished, leaving Sir Reginald alone once more. He pressed on, driven by the weight of his duty and the promise of answers. The forest grew denser, the air colder, until finally, he reached a clearing. In the center stood an ancient stone, covered in runes that glowed faintly in the moonlight.
+
+As Sir Reginald approached, a voice echoed in his mind: "The balance of the world is fragile. Power, when unchecked, can bring ruin. Choose wisely."
+
+He reached out, his hand hovering over the stone. In that moment, he realized that his choice would not only determine his fate but the fate of the entire kingdom.
 ```
 
 ## Acknowledgments
